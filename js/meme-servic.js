@@ -27,36 +27,84 @@ var gMeme = {
     lines: [
         {
             txt: '',
-            size: 20,
+            size: 30,
             align: 'left',
             color: 'red'
-        }
+        },
+        {
+            txt: '',
+            size: 30,
+            align: 'right',
+            color: 'red'
+        },
     ]
 }
 
 
-function getMeme(){
+function getMeme() {
     return gMeme
 }
 
-function setLineTxt(txt){
-    gMeme.lines[0].txt = txt
-    renderMeme()
+function setLineTxt(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
     return gMeme
 }
 
-function drawText(text, x, y) {
+function drawText(text, idx) {
+
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'green'
+    gCtx.strokeStyle = ''
     gCtx.fillStyle = 'black'
-    gCtx.font = '40px Arial'
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
-  
-    gCtx.fillText(text, x, y) 
+
+    const { x, y } = checkIdx(idx)
+
+    gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
 
-function setImg(imgId){
+function setImg(imgId) {
     gMeme.selectedImgId = imgId
+}
+
+function changeColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+    return gMeme
+}
+
+function handelFont(num) {
+    gMeme.lines[gMeme.selectedLineIdx].size += num
+    return gMeme
+}
+
+function switchLine() {
+
+    if (gMeme.selectedLineIdx === 1) {
+        gMeme.selectedLineIdx = 0
+        return true
+    }
+    if (gMeme.selectedLineIdx === 0) {
+        gMeme.selectedLineIdx = 1
+        return false
+    }
+}
+
+function addLine() {
+    return gMeme.lines.push({
+        txt: '',
+        size: 30,
+        align: 'center',
+        color: 'red'
+    },)
+}
+
+function checkIdx(idx) {
+
+    switch (idx) {
+        case 0:
+            return { x: 230, y: 50 }
+        case 1:
+            return { x: 230, y: 400 }
+    }
 }
