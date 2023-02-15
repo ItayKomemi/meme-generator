@@ -14,16 +14,17 @@ function onInit() {
 function renderMeme() {
     const meme = getMeme()
     const img = new Image()
-
+    const elGallery = document.querySelector('.gallery-container')
     gCtx.font = `${meme.lines[meme.selectedLineIdx].size}px Ariel`
-
+    
     img.src = `meme-imgs (square)/${meme.selectedImgId}.jpg`
+    elGallery.classList.add('hidden')
 
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
 
-        gMeme.lines.forEach((line,idx) => {
+        meme.lines.forEach((line,idx) => {
 
             drawText(line.txt,idx)
         })
@@ -54,7 +55,7 @@ function onHandelFont(num) {
 
 function onSwitchLine() {
     switchLine()
-
+    
     renderMeme()
 }
 
@@ -66,6 +67,4 @@ function onSetLineTxt(txt) {
 
 function onAddLine(){
     addLine()
-
-    renderMeme()
 }

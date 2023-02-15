@@ -1,0 +1,10 @@
+header{
+    /* display: grid; */
+    /* grid-auto-flow: column; */
+    height: 130px;
+    justify-content: center;
+    background-color: #5b5959;
+    margin-bottom: 20px;
+    grid-row: 1;
+    grid-column: auto;
+}
