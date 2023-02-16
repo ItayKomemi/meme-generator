@@ -1,10 +1,11 @@
 /* basics */
 
 @import 'basics/layout.css';
-
+@import 'basics/base.css';
 
 /* components */
 
+@import 'components/gallery.css';
 @import 'components/header.css';
 @import 'components/helpers.css';
 @import 'components/buttons.css';

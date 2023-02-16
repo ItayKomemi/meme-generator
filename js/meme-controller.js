@@ -7,32 +7,30 @@ function onInit() {
     gElCanvas = document.querySelector('#my-canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    // renderMeme()
     renderGallery()
 }
 
 function renderMeme() {
     const meme = getMeme()
     const img = new Image()
-    const elGallery = document.querySelector('.gallery-container')
-    gCtx.font = `${meme.lines[meme.selectedLineIdx].size}px Ariel`
-    
+
     img.src = `meme-imgs (square)/${meme.selectedImgId}.jpg`
-    elGallery.classList.add('hidden')
 
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
 
-        meme.lines.forEach((line,idx) => {
-
-            drawText(line.txt,idx)
+        meme.lines.forEach((line, idx) => {
+            drawText(line.txt, idx)
         })
     }
 }
 
 function onImgSelect(imgId) {
     setImg(imgId)
+
+    onToggelContent('Memes')
+
     renderMeme()
 }
 
@@ -40,22 +38,19 @@ function onImgSelect(imgId) {
 function onChooseColor(color) {
     changeColor(color)
 
-    gCtx.strokeStyle = color
 
     renderMeme()
 }
 
-function onHandelFont(num) {
-    handelFont(num)
-
-    gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px Ariel`
+function onHandelFont(num = gMeme.lines[0].size,font) {
+    handelFont(num,font)
 
     renderMeme()
 }
 
 function onSwitchLine() {
     switchLine()
-    
+    clearLine()
     renderMeme()
 }
 
@@ -65,6 +60,44 @@ function onSetLineTxt(txt) {
     renderMeme()
 }
 
-function onAddLine(){
-    addLine()
+function onAddLine() {
+    addLine()   
+
+    renderMeme()
 }
+
+function onToggelContent(aTag) {
+
+    if (aTag.innerText === 'Gallery') {
+        const elMain = document.querySelector('.button-canvas-container')
+        elMain.classList.add('hidden')
+        
+        const elGallery = document.querySelector('.gallery-container')
+        elGallery.classList.remove('hidden')
+    }
+    if(aTag.innerText === 'Memes' || aTag === 'Memes'){
+        const elMain = document.querySelector('.button-canvas-container')
+        elMain.classList.remove('hidden')
+        
+        const elGallery = document.querySelector('.gallery-container')
+        elGallery.classList.add('hidden')
+    }
+
+}
+
+function onSetAlign(letter) {
+    setAlign(letter)
+
+    renderMeme()
+}
+
+function onDeleteLine(){
+    deleteLine()
+
+    renderMeme()
+}
+
+function clearLine(){
+    const elLine = document.querySelector('input[name="text-line"]')
+    elLine.value = ''   
+}   

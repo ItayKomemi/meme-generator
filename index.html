@@ -9,12 +9,30 @@
     <title>Document</title>
 </head>
 
-<body onload="onInit()">
-    <header>
+<body class="body-layout" onload="onInit()">
+
+    <header class="header-layout body-layout">
         <h1>Meme-Generator</h1>
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <div class="link-div">
+                    <li><a onclick="onToggelContent(this)" href="#">Gallery</a></li>
+                    <li><a onclick="onToggelContent(this)" href="#">Memes</a></li>
+                    <li><a href="#">About</a></li>
+                </div>
+            </ul>
+        </nav>
+
     </header>
 
-    <main class="button-container">
+    <main class="button-canvas-container hidden">
+
+        <section>
+            <div class="canvas-container">
+                <canvas id="my-canvas" height="450" width="450"></canvas>
+            </div>
+        </section>
+
 
         <table>
             <tr>
@@ -24,41 +42,52 @@
             </tr>
             <tr>
                 <td>
-                    <button onclick="onSwitchLine()"><img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
+                    <button onclick="onSwitchLine()"><img
+                            src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
                     <button onclick="onAddLine()"><img src="ICONS/add.png" alt=""></button>
-                    <button><img src="ICONS/trash.png" alt=""></button>
+                    <button onclick="onDeleteLine()"><img src="ICONS/trash.png" alt=""></button>
                 </td>
             </tr>
             <tr>
                 <td>
                     <button onclick="onHandelFont(5)"><img src="ICONS/increase font - icon.png" alt=""></button>
                     <button onclick="onHandelFont(-5)"><img src="ICONS/decrease font - icon.png" alt=""></button>
-                    <button><img src="ICONS/align-to-left.png" alt=""></button>
-                    <button><img src="ICONS/center-text-alignment.png" alt=""></button>
-                    <button><img src="ICONS/align-to-right.png" alt=""></button>
+                    <button><img onclick="onSetAlign('R')" src="ICONS/align-to-left.png" alt=""></button>
+                    <button><img onclick="onSetAlign('C')" src="ICONS/center-text-alignment.png" alt=""></button>
+                    <button><img onclick="onSetAlign('L')" src="ICONS/align-to-right.png" alt=""></button>
                 </td>
             </tr>
             <tr>
                 <td>
-                        <datalist id="fonts">
-                            <option value="Impact"></option>
-                        </datalist>
-                        <button><img src="ICONS/text stroke.png" alt=""></button>
-                        <input type="color" name="color-picker" oninput="onChooseColor(this.value)"></input>
-                        <!-- <img src="ICONS/paint-board-and-brush.png" alt=""> -->
+                    <datalist id="fonts">
+                        <option value="Ariel"></option>
+                        <option value="Impact"></option>
+                        <option value="Verdana"></option>
+                    </datalist>
+
+                    <input oninput="onHandelFont(null,this.value)" type="text" list="fonts" placeholder="Impact">
+                    <button><img src="ICONS/text stroke.png" alt=""></button>
+                    <input type="color" name="color-picker" oninput="onChooseColor(this.value)"></input>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+
+                    <button class="btn" onclick="onUploadImg()">Upload to Facebook</button>
+
+                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+
+                </td>
+            </tr>
+
         </table>
+
 
     </main>
 
-    <section>
-        <div class="canvas-container">
-            <canvas id="my-canvas" height="450" width="450"></canvas>
-        </div>
-    </section>
 
-    <section class="gallery-container"></section>
+    <section class="gallery-container gallery-layout"></section>
 
 </body>
 
@@ -66,6 +95,6 @@
 <script src="js/meme-servic.js"></script>
 <script src="js/meme-controller.js"></script>
 <script src="js/gallery-controller.js"></script>
-<script src="js/meme-storage-service.js"></script>
+<script src="js/meme-upload-download.js"></script>
 
 </html>
