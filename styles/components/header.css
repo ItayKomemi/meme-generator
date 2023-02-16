@@ -1,8 +1,8 @@
 header {
     height: 130px;
     justify-content: center;
-    background-color: #5b5959;
-    margin-bottom: 20px;
+    background-color: #ff7f00;
+    margin-bottom: 1.6em;
     grid-column: 1 / -1;
 }
 
@@ -12,7 +12,12 @@ header {
     list-style: none;
 }
 
-a {
+.link-div a {
     text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.link-div a:hover{
     color: black;
 }
+

@@ -1,18 +1,9 @@
 *{
     box-sizing: border-box;
 }
-body{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 120px 1fr 1fr 120px;
-    text-align: center;
-}
+
  main{
-    background-color: rgb(148, 137, 137);
-    grid-row: 2;
-    grid-column: 3;
-    justify-self: end;
-    align-self: self-start;
+    background-color: #e3e3e3;
 }
 
 body > *:not(main,header) {
