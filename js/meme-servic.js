@@ -1,7 +1,7 @@
 'use strict'
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
-let gFont = 'Impact'
+
 
 var gImgs = [
     { id: 1, url: 'meme-imgs/1.jpg', keywords: ['donald', 'duck'] },
@@ -29,13 +29,15 @@ var gMeme = {
             txt: '',
             size: 30,
             align: 'center',
-            color: 'black'
+            color: 'black',
+            font: 'Impact',
         },
         {
             txt: '',
             size: 30,
             align: 'center',
-            color: 'black'
+            color: 'black',
+            font: 'Impact',
         },
     ]
 }
@@ -55,7 +57,7 @@ function drawText(text, idx) {
     gCtx.strokeStyle = gMeme.lines[idx].color
     gCtx.fillStyle = 'white'
     gCtx.textBaseline = 'middle'
-    gCtx.font = `${gMeme.lines[idx].size}px ${gFont}`
+    gCtx.font = `${gMeme.lines[idx].size}px ${gMeme.lines[idx].font}`
     gCtx.textAlign = gMeme.lines[idx].align
     
 
@@ -78,7 +80,8 @@ function changeColor(color) {
 
 function handelFont(num, font) {
     gMeme.lines[gMeme.selectedLineIdx].size += num
-    gFont = font
+    gMeme.lines[gMeme.selectedLineIdx].font = font
+
     return gMeme
 }
 
@@ -93,7 +96,8 @@ function addLine() {
         txt: '',
         size: 30,
         align: 'center',
-        color: 'red'
+        color: 'black',
+        font: 'Impact',
     },)
 }
 
@@ -119,5 +123,5 @@ function setAlign(letter) {
 }
 
 function deleteLine(){
-    gMeme.lines[gMeme.selectedLineIdx].txt = ''
+    gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx],1)
 }

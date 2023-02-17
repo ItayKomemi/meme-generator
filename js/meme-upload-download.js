@@ -3,6 +3,7 @@
 // The next 2 functions handle IMAGE UPLOADING to img tag from file system:
 function onImgInput(ev) {
     loadImageFromInput(ev, renderImg)
+    return true
 }
 
 // CallBack func will run on success load of the img

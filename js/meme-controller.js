@@ -19,7 +19,6 @@ function renderMeme() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-
         meme.lines.forEach((line, idx) => {
             drawText(line.txt, idx)
         })
@@ -42,15 +41,17 @@ function onChooseColor(color) {
     renderMeme()
 }
 
-function onHandelFont(num = gMeme.lines[0].size,font) {
-    handelFont(num,font)
+function onHandelFont(num = gMeme.lines[0].size, font) {
+    handelFont(num, font)
 
     renderMeme()
 }
 
 function onSwitchLine() {
     switchLine()
+
     clearLine()
+
     renderMeme()
 }
 
@@ -61,7 +62,7 @@ function onSetLineTxt(txt) {
 }
 
 function onAddLine() {
-    addLine()   
+    addLine()
 
     renderMeme()
 }
@@ -71,14 +72,14 @@ function onToggelContent(aTag) {
     if (aTag.innerText === 'Gallery') {
         const elMain = document.querySelector('.button-canvas-container')
         elMain.classList.add('hidden')
-        
+
         const elGallery = document.querySelector('.gallery-container')
         elGallery.classList.remove('hidden')
     }
-    if(aTag.innerText === 'Memes' || aTag === 'Memes'){
+    if (aTag.innerText === 'Memes' || aTag === 'Memes') {
         const elMain = document.querySelector('.button-canvas-container')
         elMain.classList.remove('hidden')
-        
+
         const elGallery = document.querySelector('.gallery-container')
         elGallery.classList.add('hidden')
     }
@@ -91,13 +92,13 @@ function onSetAlign(letter) {
     renderMeme()
 }
 
-function onDeleteLine(){
+function onDeleteLine() {
     deleteLine()
 
     renderMeme()
 }
 
-function clearLine(){
+function clearLine() {
     const elLine = document.querySelector('input[name="text-line"]')
-    elLine.value = ''   
+    elLine.value = ''
 }   
