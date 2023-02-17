@@ -8,7 +8,7 @@
         gap: 10px;
     }
     .header-layout{
-        width: 80%;
+        width: 100%;
     }
 
     .body-layout{
@@ -19,7 +19,7 @@
 
     .button-canvas-container {
         grid-template-columns: 1fr;
-        width: 80%;
+        width: 100%;
     }
 
     .button-container {
@@ -37,7 +37,7 @@
 
     .footer-layout {
         grid-column: 1/-1;
-        width: 80%;
+        width: 100%;
     }
 
 }
