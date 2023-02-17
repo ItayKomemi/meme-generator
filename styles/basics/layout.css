@@ -9,11 +9,11 @@
     justify-content: space-between;
 }
 
-.body-layout{
+/* .body-layout{
     display: grid;
     grid-template-columns: 200px 1fr 200px;
     text-align: center;
-}
+} */
 
 .body-layout > *:not(.header-layout,.footer-layout){
     grid-column: 2;
