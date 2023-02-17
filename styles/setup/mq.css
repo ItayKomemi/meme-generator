@@ -8,6 +8,11 @@
         gap: 10px;
     }
 
+    .img-gallery {
+        width: 50px;
+        height: 50px;
+    }
+
     .body-layout{
         display: grid;
         grid-template-columns: 10px 1fr 10px;
@@ -37,6 +42,10 @@
         grid-column: 1/-1;
         width: inherit;
     }
+    .button-canvas-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (min-width: 750px) {
@@ -61,6 +70,10 @@
     .footer-layout {
         grid-column: 1/-1;
         width: inherit;
+    }
+    .button-canvas-container{
+        display: grid;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -87,5 +100,9 @@
     .footer-layout {
         grid-column: 1/-1;
         width: inherit;
+    }
+    .button-canvas-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }

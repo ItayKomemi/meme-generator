@@ -1,3 +1,12 @@
 .hidden{
     display: none;
 }
+
+.btn{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    cursor: pointer;
+}
