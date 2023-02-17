@@ -1,7 +1,4 @@
 @media (max-width: 750px) {
-    /* body {
-        overflow-x: hidden;
-    } */
 
     .gallery-layout {
         grid-template-columns: repeat(2, minmax(80px, 1fr));
@@ -9,6 +6,7 @@
     }
     .header-layout{
         width: 100%;
+        grid-column: 1/-1;
     }
 
     .body-layout{
