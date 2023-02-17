@@ -1,11 +1,14 @@
 @media (max-width: 750px) {
-    body {
+    /* body {
         overflow-x: hidden;
-    }
+    } */
 
     .gallery-layout {
-        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, minmax(80px, 1fr));
         gap: 10px;
+    }
+    .header-layout{
+        width: 70%;
     }
 
     .body-layout{
@@ -16,18 +19,16 @@
 
     .button-canvas-container {
         grid-template-columns: 1fr;
-        min-width: 80%;
+        width: 70%;
     }
 
     .button-container {
         grid-column: 1;
-        height: 100%;
+        width: 70%;
     }
 
     #canvas-container {
         grid-row: 1;
-        width: 100%;
-        height: 100%;
     }
 
     .body-layout>*:not(.header-layout) {
@@ -36,7 +37,7 @@
 
     .footer-layout {
         grid-column: 1/-1;
-        width: inherit;
+        width: 70%;
     }
 
 }
