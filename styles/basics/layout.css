@@ -9,7 +9,7 @@
     justify-content: space-between;
 }
 
-.body-layout > *:not(.header-layout,.footer-layout){
+.body-layout > *:not(.header-layout){
     grid-column: 2;
 }
 

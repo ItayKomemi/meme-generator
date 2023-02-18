@@ -71,18 +71,21 @@ function onToggelContent(aTag) {
     const elMain = document.querySelector('.button-canvas-container')
     const elGallery = document.querySelector('.gallery-container')
     const elFlexBtn = document.querySelector('.flex-btn')
+    const elSearchParam = document.querySelector('.input-params')
 
     if (aTag.innerText === 'Gallery') {
 
         elMain.classList.add('hidden')
         elGallery.classList.remove('hidden')
         elFlexBtn.classList.remove('hidden')
+        elSearchParam.classList.remove('hidden')
     }
     if (aTag.innerText === 'Memes' || aTag === 'Memes') {
-
+        
         elMain.classList.remove('hidden')
         elGallery.classList.add('hidden')
         elFlexBtn.classList.add('hidden')
+        elSearchParam.classList.add('hidden')
     }
 
 }
@@ -109,6 +112,21 @@ function onFlexMeme() {
   const lineTxt = getRandomTxt()
   const txtSize = getRandomTxtSize()
   const color = getRandomColor()
-
+  const img = getRandomImg()  
+  renderRandomMeme(line,lineTxt,txtSize,color,img)
+  onToggelContent('Memes')
   renderMeme()
+}
+
+function onSetSticker(emoji){
+    setSticker(emoji.innerText)
+
+    renderMeme()
+}
+
+function onSearchParams(params){
+
+   const imges = searchParams(params)
+   renderGallery(imges)
+   handelMemesWhenSearched() 
 }

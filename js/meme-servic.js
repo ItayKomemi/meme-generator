@@ -2,23 +2,22 @@
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
-
 var gImgs = [
-    { id: 1, url: 'meme-imgs/1.jpg', keywords: ['donald', 'duck'] },
-    { id: 2, url: 'meme-imgs/2.jpg', keywords: ['funny', 'cat'] },
-    { id: 3, url: 'meme-imgs/3.jpg', keywords: ['funny', 'cat'] },
-    { id: 4, url: 'meme-imgs/4.jpg', keywords: ['funny', 'cat'] },
-    { id: 5, url: 'meme-imgs/5.jpg', keywords: ['funny', 'cat'] },
-    { id: 6, url: 'meme-imgs/6.jpg', keywords: ['funny', 'cat'] },
-    { id: 7, url: 'meme-imgs/7.jpg', keywords: ['funny', 'cat'] },
-    { id: 8, url: 'meme-imgs/8.jpg', keywords: ['funny', 'cat'] },
-    { id: 9, url: 'meme-imgs/9.jpg', keywords: ['funny', 'cat'] },
-    { id: 10, url: 'meme-imgs/10.jpg', keywords: ['funny', 'cat'] },
-    { id: 11, url: 'meme-imgs/11.jpg', keywords: ['funny', 'cat'] },
-    { id: 12, url: 'meme-imgs/12.jpg', keywords: ['funny', 'cat'] },
-    { id: 13, url: 'meme-imgs/13.jpg', keywords: ['funny', 'cat'] },
-    { id: 14, url: 'meme-imgs/14.jpg', keywords: ['funny', 'cat'] },
-    { id: 15, url: 'meme-imgs/15.jpg', keywords: ['funny', 'cat'] },
+    { id: 1, url: 'meme-imgs/1.jpg', keywords: ['funny', 'man'] },
+    { id: 2, url: 'meme-imgs/2.jpg', keywords: ['cute', 'puppy'] },
+    { id: 3, url: 'meme-imgs/3.jpg', keywords: ['sleepy', 'baby'] },
+    { id: 4, url: 'meme-imgs/4.jpg', keywords: ['sleepy', 'cat'] },
+    { id: 5, url: 'meme-imgs/5.jpg', keywords: ['cute', 'baby'] },
+    { id: 6, url: 'meme-imgs/6.jpg', keywords: ['actor', 'man'] },
+    { id: 7, url: 'meme-imgs/7.jpg', keywords: ['funny', 'baby'] },
+    { id: 8, url: 'meme-imgs/8.jpg', keywords: ['funny', 'man'] },
+    { id: 9, url: 'meme-imgs/9.jpg', keywords: ['funny', 'baby'] },
+    { id: 10, url: 'meme-imgs/10.jpg', keywords: ['funny', 'man'] },
+    { id: 11, url: 'meme-imgs/11.jpg', keywords: ['fighting', 'man'] },
+    { id: 12, url: 'meme-imgs/12.jpg', keywords: ['actor', 'man'] },
+    { id: 13, url: 'meme-imgs/13.jpg', keywords: ['actor', 'man'] },
+    { id: 14, url: 'meme-imgs/14.jpg', keywords: ['actor', 'man'] },
+    { id: 15, url: 'meme-imgs/15.jpg', keywords: ['actor', 'man'] },
 ];
 
 var gMeme = {
@@ -146,7 +145,39 @@ function getRandomTxtSize() {
 }
 
 
-function getRandomLine(){
-    const line = getRandomInt(1,2)
+function getRandomLine() {
+    const line = getRandomInt(0, 1)
     return line
+}
+function getRandomImg() {
+    const img = getRandomInt(1, 15)
+    return img
+}
+
+
+function renderRandomMeme(line, lineTxt, txtSize, color, img) {
+    gMeme.selectedLineIdx = line
+    gMeme.lines[gMeme.selectedLineIdx].txt = lineTxt
+    gMeme.lines[gMeme.selectedLineIdx].size = txtSize
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+    gMeme.selectedImgId = img
+
+    return gMeme
+}
+
+function setSticker(emoji) {
+    gMeme.lines[gMeme.selectedLineIdx].txt += emoji
+
+    return gMeme
+}
+
+function searchParams(param) {
+    let filtered = []
+
+    gImgs.filter(img => {
+        for (var i = 0; i < 2; i++) {
+            if (img.keywords[i] === param) filtered.push(img)
+        }
+    })
+    return filtered
 }

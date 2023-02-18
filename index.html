@@ -25,7 +25,7 @@
     </header>
 
     
-
+    
     <main class="button-canvas-container hidden">
 
         <section>
@@ -60,6 +60,17 @@
             </tr>
             <tr>
                 <td>
+                    <div class="emoji">
+                        <button onclick="onSetSticker(this)">😎</button>
+                        <button onclick="onSetSticker(this)">😉</button>
+                        <button onclick="onSetSticker(this)">😁</button>
+                        <button onclick="onSetSticker(this)">😍</button>
+                        <button onclick="onSetSticker(this)">😵</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <datalist id="fonts">
                         <option value="Ariel"></option>
                         <option value="Impact"></option>
@@ -83,19 +94,38 @@
             </tr>
 
         </table>
-        
+
     </main>
-    
-    <footer class="footer-layout body-layout">
-        <h3 class="logo">memegen</h3>
-        <small>all rights reserved 2023</small>
-    </footer>
-    
-    <section class="gallery-container gallery-layout"></section>
 
     <div class="flex-btn-div">
         <button onclick="onFlexMeme()" class="flex-btn">I'm flexible</button>
     </div>
+
+    <div>
+    
+        <datalist id="search-param">
+            <option value="actor"></option>
+            <option value="man"></option>
+            <option value="funny"></option>
+            <option value="cute"></option>
+            <option value="baby"></option>
+            <option value="fighting"></option>
+            <option value="sleepy"></option>
+        </datalist>
+    
+    
+        <input class="input-params" oninput="onSearchParams(this.value)" type="text" list="search-param"
+            placeholder="Search memes here!" name="params">
+    
+    </div>
+    
+    <footer class="footer-layout">
+        <h3 class="logo">memegen</h3>
+        <small>all rights reserved 2023</small>
+    </footer>
+
+    <section class="gallery-container gallery-layout"></section>
+
 
 </body>
 
