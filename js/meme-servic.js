@@ -38,6 +38,13 @@ var gMeme = {
             color: 'black',
             font: 'Impact',
         },
+        {
+            txt: '',
+            size: 30,
+            align: 'center',
+            color: 'black',
+            font: 'Impact',
+        },
     ]
 }
 
@@ -59,11 +66,18 @@ function drawText(text, idx) {
     gCtx.font = `${gMeme.lines[idx].size}px ${gMeme.lines[idx].font}`
     gCtx.textAlign = gMeme.lines[idx].align
 
-
     const { x, y } = checkIdx(idx)
 
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
+    if (gMeme.selectedLineIdx === idx && text) drawRect(x, y, text)
+}
+
+function drawRect(x, y, txt) {
+    let width = gCtx.measureText(txt).width
+    gCtx.strokeStyle = 'black'
+    gCtx.strokeRect(x - width / 2, y - 20, width, 40)
+    gCtx.fillStyle = ''
 }
 
 function setImg(imgId) {
@@ -106,6 +120,8 @@ function checkIdx(idx) {
         case 0:
             return { x: 230, y: 50 }
         case 1:
+            return { x: 230, y: 250 }
+        case 2:
             return { x: 230, y: 400 }
 
         default:
@@ -144,7 +160,6 @@ function getRandomTxtSize() {
     return txtSize
 }
 
-
 function getRandomLine() {
     const line = getRandomInt(0, 1)
     return line
@@ -153,7 +168,6 @@ function getRandomImg() {
     const img = getRandomInt(1, 15)
     return img
 }
-
 
 function renderRandomMeme(line, lineTxt, txtSize, color, img) {
     gMeme.selectedLineIdx = line
