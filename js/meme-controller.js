@@ -108,13 +108,17 @@ function clearLine() {
 }
 
 function onFlexMeme() {
+
   const line = getRandomLine() 
   const lineTxt = getRandomTxt()
   const txtSize = getRandomTxtSize()
   const color = getRandomColor()
   const img = getRandomImg()  
+  
   renderRandomMeme(line,lineTxt,txtSize,color,img)
+  
   onToggelContent('Memes')
+  
   renderMeme()
 }
 
@@ -128,5 +132,6 @@ function onSearchParams(params){
 
    const imges = searchParams(params)
    renderGallery(imges)
+   
    handelMemesWhenSearched() 
 }

@@ -91,7 +91,7 @@ function changeColor(color) {
     return gMeme
 }
 
-function handelFont(num, font) {
+function handelFont(num, font = 'Impact') {
     gMeme.lines[gMeme.selectedLineIdx].size += num
     gMeme.lines[gMeme.selectedLineIdx].font = font
 
@@ -134,6 +134,8 @@ function setAlign(letter) {
     if (letter === 'L') gMeme.lines[gMeme.selectedLineIdx].align = 'left'
     else if (letter === 'C') gMeme.lines[gMeme.selectedLineIdx].align = 'center'
     else if (letter === 'R') gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+
+     
     return gMeme
 }
 
