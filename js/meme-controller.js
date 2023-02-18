@@ -68,20 +68,21 @@ function onAddLine() {
 }
 
 function onToggelContent(aTag) {
+    const elMain = document.querySelector('.button-canvas-container')
+    const elGallery = document.querySelector('.gallery-container')
+    const elFlexBtn = document.querySelector('.flex-btn')
 
     if (aTag.innerText === 'Gallery') {
-        const elMain = document.querySelector('.button-canvas-container')
-        elMain.classList.add('hidden')
 
-        const elGallery = document.querySelector('.gallery-container')
+        elMain.classList.add('hidden')
         elGallery.classList.remove('hidden')
+        elFlexBtn.classList.remove('hidden')
     }
     if (aTag.innerText === 'Memes' || aTag === 'Memes') {
-        const elMain = document.querySelector('.button-canvas-container')
-        elMain.classList.remove('hidden')
 
-        const elGallery = document.querySelector('.gallery-container')
+        elMain.classList.remove('hidden')
         elGallery.classList.add('hidden')
+        elFlexBtn.classList.add('hidden')
     }
 
 }
@@ -101,4 +102,13 @@ function onDeleteLine() {
 function clearLine() {
     const elLine = document.querySelector('input[name="text-line"]')
     elLine.value = ''
-}   
+}
+
+function onFlexMeme() {
+  const line = getRandomLine() 
+  const lineTxt = getRandomTxt()
+  const txtSize = getRandomTxtSize()
+  const color = getRandomColor()
+
+  renderMeme()
+}

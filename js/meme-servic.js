@@ -59,7 +59,7 @@ function drawText(text, idx) {
     gCtx.textBaseline = 'middle'
     gCtx.font = `${gMeme.lines[idx].size}px ${gMeme.lines[idx].font}`
     gCtx.textAlign = gMeme.lines[idx].align
-    
+
 
     const { x, y } = checkIdx(idx)
 
@@ -122,6 +122,31 @@ function setAlign(letter) {
     return gMeme
 }
 
-function deleteLine(){
-    gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx],1)
+function deleteLine() {
+    gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx], 1)
+}
+
+function getRandomTxt() {
+    const strList = [
+        'one does not simply',
+        'whattttttttttt',
+        'there you go',
+        'Say what?',
+        'alooooooooooo'
+    ]
+
+    const str = strList[Math.floor(Math.random() * strList.length)]
+
+    return str
+}
+
+function getRandomTxtSize() {
+    const txtSize = getRandomInt(10, 40)
+    return txtSize
+}
+
+
+function getRandomLine(){
+    const line = getRandomInt(1,2)
+    return line
 }
