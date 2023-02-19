@@ -11,6 +11,20 @@
         min-width: 40px;
     }
 
+    .modal {
+        border: solid 3px rgb(0, 0, 0);
+        width: 280px;
+        height: 400px;
+        background-color: rgb(5, 5, 5);
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        line-height: 51px;
+        position: absolute;
+        top: 285px;
+        left: calc(50% - 140px);
+        cursor: pointer;
+    }
+
     #my-links {
         display: none;
     }
