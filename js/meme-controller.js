@@ -11,6 +11,7 @@ function onInit() {
 }
 
 function renderMeme() {
+
     const meme = getMeme()
     const img = new Image()
 
@@ -81,7 +82,7 @@ function onToggelContent(aTag) {
         elSearchParam.classList.remove('hidden')
     }
     if (aTag.innerText === 'Memes' || aTag === 'Memes') {
-        
+
         elMain.classList.remove('hidden')
         elGallery.classList.add('hidden')
         elFlexDiv.classList.add('hidden')
@@ -110,29 +111,45 @@ function clearLine() {
 
 function onFlexMeme() {
 
-  const line = getRandomLine() 
-  const lineTxt = getRandomTxt()
-  const txtSize = getRandomTxtSize()
-  const color = getRandomColor()
-  const img = getRandomImg()  
-  
-  renderRandomMeme(line,lineTxt,txtSize,color,img)
-  
-  onToggelContent('Memes')
-  
-  renderMeme()
+    const line = getRandomLine()
+    const lineTxt = getRandomTxt()
+    const txtSize = getRandomTxtSize()
+    const color = getRandomColor()
+    const img = getRandomImg()
+
+    renderRandomMeme(line, lineTxt, txtSize, color, img)
+
+    onToggelContent('Memes')
+
+    renderMeme()
 }
 
-function onSetSticker(emoji){
+function onSetSticker(emoji) {
     setSticker(emoji.innerText)
 
     renderMeme()
 }
 
-function onSearchParams(params){
+function onSearchParams(params) {
 
-   const imges = searchParams(params)
-   renderGallery(imges)
-   
-   handelMemesWhenSearched() 
+    const imges = searchParams(params)
+    renderGallery(imges)
+
+    handelMemesWhenSearched()
+}
+
+function onToggelBurgerNav() {
+    var elNav = document.getElementById('my-links')
+    
+    if (elNav.style.display === 'none') elNav.style.display = 'block'
+    else elNav.style.display = 'none'
+
+}
+
+function onHandelModal(param){
+    const elModal = document.querySelector('div')
+    
+    if(param === 'open') elModal.classList.remove('hidden')
+    else if(param === 'close') elModal.classList.add('hidden')
+
 }

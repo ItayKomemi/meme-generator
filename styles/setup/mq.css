@@ -1,11 +1,50 @@
 @media (max-width: 750px) {
-    body{
+    body {
         overflow-x: hidden;
+    }
+
+    .main-nav {
+        overflow: hidden;
+        background-color: #9c9999;
+        position: relative;
+        max-width: 160px;
+        min-width: 40px;
+    }
+
+    #my-links {
+        display: none;
     }
 
     .gallery-layout {
         grid-template-columns: repeat(2, minmax(80px, 1fr));
         gap: 10px;
+    }
+
+    .main-menu a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .main-nav a.icon {
+        background: #e3e3e3;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .main-nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .active {
+        background-color: #8f8989;
+        color: white;
+        display: block;
     }
 
     .header-layout {
@@ -51,17 +90,19 @@
 
     .header-layout .logo {
         font-size: 2em;
-        margin-left: 4em;
+        margin-left: 2em;
     }
 
     .button-container {
         margin-left: 13em;
         margin-bottom: 1em;
     }
-    .logo-footer{
+
+    .logo-footer {
         font-size: 2em;
-    } 
-    .button-container{
+    }
+
+    .button-container {
         margin-left: 2.7em;
         margin-top: 0;
     }
@@ -71,6 +112,10 @@
 @media (min-width: 750px) {
     body {
         overflow-x: hidden;
+    }
+
+    .main-nav a.icon {
+        display: none;
     }
 
     .gallery-layout {
@@ -98,6 +143,10 @@
         grid-template-columns: 1fr;
         min-width: 80%;
     }
+
+    .header-layout {
+        height: 9.125em;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -108,6 +157,10 @@
     .gallery-layout {
         grid-template-columns: repeat(4, minmax(180px, 1fr));
         gap: 10px;
+    }
+
+    .main-nav a.icon {
+        display: none;
     }
 
     .body-layout {
@@ -127,7 +180,10 @@
 
     .button-canvas-container {
         grid-template-columns: 1fr 1fr;
+    }
 
+    .header-layout {
+        height: 7.125em;
     }
 
 }

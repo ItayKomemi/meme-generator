@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 
@@ -14,13 +15,20 @@
     <header class="header-layout">
         <h3 class="logo" onclick="onToggelContent('Gallery')">Meme-Generator</h3>
         <nav class="main-nav">
-            <ul class="main-menu">
+            <ul class="main-menu" id="my-links">
                 <li><a onclick="onToggelContent(this)" href="#">Gallery</a></li>
                 <li><a onclick="onToggelContent(this)" href="#">Memes</a></li>
-                <li><a href="#">About</a></li>
+                <li><a onclick="onHandelModal('open')" href="#">About</a></li>
             </ul>
         </nav>
+
+        <a href="javascript:void(0);" class="icon active" onclick="onToggelBurgerNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+
     </header>
+
+    <div onclick="onHandelModal('close')" class="modal hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, iure. Id non atque eius blanditiis quisquam quibusdam illo quo perferendis, vero libero, repudiandae similique accusamus nulla. Pariatur libero neque qui!</div>
 
     <div class="input-flex-container">
 
@@ -55,7 +63,7 @@
         <div class="button-container">
 
             <div>
-                <input oninput="onSetLineTxt(this.value)" class="txt-input"  type="text" name="text-line"
+                <input oninput="onSetLineTxt(this.value)" class="txt-input" type="text" name="text-line"
                     placeholder="Enter some text here">
             </div>
 
@@ -98,7 +106,8 @@
 
                 <button class="btn upload" onclick="onUploadImg()">Upload to Facebook</button>
 
-                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg"><button class="download">Download</button></a>
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg"><button
+                        class="download">Download</button></a>
 
             </div>
 

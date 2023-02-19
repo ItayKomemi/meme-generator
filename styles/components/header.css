@@ -35,3 +35,13 @@
     display: flex;
     grid-auto-flow: column;
 }
+
+.active{
+    color: #e3e3e3;
+    display: none;
+}
+
+#my-links{
+    display: flex;
+    grid-auto-flow: column;
+}
