@@ -11,98 +11,19 @@
 
 <body class="body-layout" onload="onInit()">
 
-    <header class="header-layout body-layout">
-        <h1 class="logo">Meme-Generator</h1>
+    <header class="header-layout">
+        <h3 class="logo" onclick="onToggelContent('Gallery')">Meme-Generator</h3>
         <nav class="main-nav">
             <ul class="main-menu">
-                <div class="link-div">
-                    <li><a onclick="onToggelContent(this)" href="#">Gallery</a></li>
-                    <li><a onclick="onToggelContent(this)" href="#">Memes</a></li>
-                    <li><a href="#">About</a></li>
-                </div>
+                <li><a onclick="onToggelContent(this)" href="#">Gallery</a></li>
+                <li><a onclick="onToggelContent(this)" href="#">Memes</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </nav>
     </header>
 
-    
-    
-    <main class="button-canvas-container hidden">
+    <div class="input-flex-container">
 
-        <section>
-            <div class="canvas-container">
-                <canvas id="my-canvas" height="450" width="450"></canvas>
-            </div>
-        </section>
-
-
-        <table class="button-container">
-            <tr>
-                <td>
-                    <input oninput="onSetLineTxt(this.value)" type="text" name="text-line" placeholder="Text line">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="onSwitchLine()"><img
-                            src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
-                    <button onclick="onAddLine()"><img src="ICONS/add.png" alt=""></button>
-                    <button onclick="onDeleteLine()"><img src="ICONS/trash.png" alt=""></button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="onHandelFont(5)"><img src="ICONS/increase font - icon.png" alt=""></button>
-                    <button onclick="onHandelFont(-5)"><img src="ICONS/decrease font - icon.png" alt=""></button>
-                    <button><img onclick="onSetAlign('R')" src="ICONS/align-to-left.png" alt=""></button>
-                    <button><img onclick="onSetAlign('C')" src="ICONS/center-text-alignment.png" alt=""></button>
-                    <button><img onclick="onSetAlign('L')" src="ICONS/align-to-right.png" alt=""></button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="emoji">
-                        <button onclick="onSetSticker(this)">😎</button>
-                        <button onclick="onSetSticker(this)">😉</button>
-                        <button onclick="onSetSticker(this)">😁</button>
-                        <button onclick="onSetSticker(this)">😍</button>
-                        <button onclick="onSetSticker(this)">😵</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <datalist id="fonts">
-                        <option value="Ariel"></option>
-                        <option value="Impact"></option>
-                        <option value="Verdana"></option>
-                    </datalist>
-
-                    <input oninput="onHandelFont(null,this.value)" type="text" list="fonts" placeholder="Impact">
-                    <button><img src="ICONS/text stroke.png" alt=""></button>
-                    <input type="color" name="color-picker" oninput="onChooseColor(this.value)"></input>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
-
-                    <button class="btn" onclick="onUploadImg()">Upload to Facebook</button>
-
-                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
-
-                </td>
-            </tr>
-
-        </table>
-
-    </main>
-
-    <div class="flex-btn-div">
-        <button onclick="onFlexMeme()" class="flex-btn">I'm flexible</button>
-    </div>
-
-    <div>
-    
         <datalist id="search-param">
             <option value="actor"></option>
             <option value="man"></option>
@@ -112,19 +33,88 @@
             <option value="fighting"></option>
             <option value="sleepy"></option>
         </datalist>
-    
-    
-        <input class="input-params" oninput="onSearchParams(this.value)" type="text" list="search-param"
-            placeholder="Search memes here!" name="params">
-    
+
+
+        <span>Search meme:</span> <input class="input-params" oninput="onSearchParams(this.value)" type="text"
+            list="search-param" placeholder="Search memes here!" name="params">
+
+        <button onclick="onFlexMeme()" class="flex-btn">I'm flexible</button>
     </div>
-    
+
+
+
+    <main class="button-canvas-container hidden">
+
+        <section>
+            <div class="canvas-container">
+                <canvas id="my-canvas" height="450" width="450"></canvas>
+            </div>
+        </section>
+
+
+        <div class="button-container">
+
+            <div>
+                <span>Enter text here:</span> <input oninput="onSetLineTxt(this.value)" type="text" name="text-line"
+                    placeholder="Text line">
+            </div>
+
+            <div>
+                <button onclick="onSwitchLine()"><img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                        alt=""></button>
+                <button onclick="onAddLine()"><img src="ICONS/add.png" alt=""></button>
+                <button onclick="onDeleteLine()"><img src="ICONS/trash.png" alt=""></button>
+            </div>
+            <div>
+                <button onclick="onHandelFont(5)"><img src="ICONS/increase font - icon.png" alt=""></button>
+                <button onclick="onHandelFont(-5)"><img src="ICONS/decrease font - icon.png" alt=""></button>
+                <button><img onclick="onSetAlign('R')" src="ICONS/align-to-left.png" alt=""></button>
+                <button><img onclick="onSetAlign('C')" src="ICONS/center-text-alignment.png" alt=""></button>
+                <button><img onclick="onSetAlign('L')" src="ICONS/align-to-right.png" alt=""></button>
+            </div>
+
+            <div>
+                <datalist id="fonts">
+                    <option value="Ariel"></option>
+                    <option value="Impact"></option>
+                    <option value="Verdana"></option>
+                </datalist>
+
+                <span>Choose font here:</span> <input oninput="onHandelFont(null,this.value)" type="text" list="fonts"
+                    placeholder="Impact">
+                <!-- <button><img src="ICONS/text stroke.png" alt=""></button> -->
+                <input type="color" name="color-picker" oninput="onChooseColor(this.value)"></input>
+            </div>
+
+            <div class="emoji">
+                <button onclick="onSetSticker(this)">😎</button>
+                <button onclick="onSetSticker(this)">😉</button>
+                <button onclick="onSetSticker(this)">😁</button>
+                <button onclick="onSetSticker(this)">😍</button>
+                <button onclick="onSetSticker(this)">😵</button>
+            </div>
+            <div>
+
+                <!-- <input type="file" class="file-input btn hidden" name="image" onchange="onImgInput(event)" /> -->
+
+                <button class="btn" onclick="onUploadImg()">Upload to Facebook</button>
+
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg"><button>Download</button></a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <section class="gallery-container gallery-layout"></section>
+
     <footer class="footer-layout">
-        <h3 class="logo">memegen</h3>
+        <h3 class="logo-footer" onclick="onToggelContent('Gallery')">memegen</h3>
         <small>all rights reserved 2023</small>
     </footer>
 
-    <section class="gallery-container gallery-layout"></section>
+
 
 
 </body>

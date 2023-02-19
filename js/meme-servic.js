@@ -140,6 +140,7 @@ function setAlign(letter) {
 }
 
 function deleteLine() {
+    console.log(gMeme.selectedLineIdx);
     gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx], 1)
 }
 

@@ -70,23 +70,24 @@ function onAddLine() {
 function onToggelContent(aTag) {
     const elMain = document.querySelector('.button-canvas-container')
     const elGallery = document.querySelector('.gallery-container')
-    const elFlexBtn = document.querySelector('.flex-btn')
+    const elFlexDiv = document.querySelector('.input-flex-container')
     const elSearchParam = document.querySelector('.input-params')
 
-    if (aTag.innerText === 'Gallery') {
+    if (aTag.innerText === 'Gallery' || aTag === 'Gallery') {
 
         elMain.classList.add('hidden')
         elGallery.classList.remove('hidden')
-        elFlexBtn.classList.remove('hidden')
+        elFlexDiv.classList.remove('hidden')
         elSearchParam.classList.remove('hidden')
     }
     if (aTag.innerText === 'Memes' || aTag === 'Memes') {
         
         elMain.classList.remove('hidden')
         elGallery.classList.add('hidden')
-        elFlexBtn.classList.add('hidden')
+        elFlexDiv.classList.add('hidden')
         elSearchParam.classList.add('hidden')
     }
+
 
 }
 

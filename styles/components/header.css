@@ -1,23 +1,36 @@
-header {
-    height: 130px;
-    justify-content: center;
+.header-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10.125em;
     background-color: #ff7f00;
-    margin-bottom: 1.6em;
     grid-column: 1 / -1;
 }
 
-.link-div {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+.logo{
+    font-size: 3em;
+    width: 8.3125em;
+    height: 1.375em;
+    margin-left: 4em;
 }
 
-.link-div a {
+.main-menu {
+    width: 20em;
+    list-style: none;
+    margin-right: 18em;
+}
+
+.main-menu a {
     text-decoration: none;
     color: rgb(255, 255, 255);
+    padding: 40px 40px;
 }
 
-.link-div a:hover{
+.main-menu a:hover{
     color: black;
 }
 
+.main-menu{
+    display: flex;
+    grid-auto-flow: column;
+}

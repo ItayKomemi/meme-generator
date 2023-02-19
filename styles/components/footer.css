@@ -1,7 +1,22 @@
 .footer-layout {
     background-color: #ff7f00;
+    grid-column: 1/-1;
 }
 
 .logo {
     color: #ffffff;
+    cursor: pointer;
+}
+.logo-footer{
+    font-size: 3em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.footer-layout{
+    text-align: center;
+}
+
+.footer-layout .logo {
+    width: 18em;
 }

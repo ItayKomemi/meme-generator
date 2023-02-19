@@ -1,3 +1,15 @@
 .gallery-container{
     background-color: #e3e3e3;
 }
+
+.img-gallery{
+    cursor: pointer;
+}
+
+.input-flex-container{
+    padding-block: 20px;
+}
+
+img {
+    width: 100%;
+}

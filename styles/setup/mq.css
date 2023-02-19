@@ -4,15 +4,20 @@
         grid-template-columns: repeat(2, minmax(80px, 1fr));
         gap: 10px;
     }
-    .header-layout{
+
+    .header-layout {
         width: 100%;
         grid-column: 1/-1;
     }
 
-    .body-layout{
+    .footer-layout .logo {
+        width: 30px;
+    }
+
+    .body-layout {
         display: grid;
         grid-template-columns: 10px 1fr 10px;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .button-canvas-container {
@@ -29,7 +34,7 @@
         grid-row: 1;
     }
 
-    .body-layout>*:not(.header-layout) {
+    .body-layout>*:not(.header-layout, .footer-layout) {
         grid-column: 2;
     }
 
@@ -37,6 +42,23 @@
         grid-column: 1/-1;
         width: 100%;
     }
+
+    .footer-layout .logo {
+        font-size: 2em;
+    }
+
+    .header-layout .logo {
+        font-size: 2em;
+        margin-left: 4em;
+    }
+
+    .button-container {
+        margin-left: 13em;
+        margin-bottom: 1em;
+    }
+    .logo-footer{
+        font-size: 2em;
+    } 
 
 }
 
@@ -49,13 +71,14 @@
         grid-template-columns: repeat(3, minmax(180px, 1fr));
         gap: 10px;
     }
-    .body-layout{
+
+    .body-layout {
         display: grid;
         grid-template-columns: 100px 1fr 100px;
         text-align: center;
     }
-    
-    .body-layout>*:not(.header-layout) {
+
+    .body-layout>*:not(.header-layout, .footer-layout) {
         grid-column: 2;
         min-width: 80%;
     }
@@ -64,7 +87,8 @@
         grid-column: 1/-1;
         width: inherit;
     }
-    .button-canvas-container{
+
+    .button-canvas-container {
         grid-template-columns: 1fr;
         min-width: 80%;
     }
@@ -80,7 +104,7 @@
         gap: 10px;
     }
 
-    .body-layout{
+    .body-layout {
         display: grid;
         grid-template-columns: 200px 1fr 200px;
         text-align: center;
@@ -92,9 +116,12 @@
 
     .footer-layout {
         grid-column: 1/-1;
-        width: inherit;
+        height: 12.9375em;
     }
-    .button-canvas-container{
+
+    .button-canvas-container {
         grid-template-columns: 1fr 1fr;
+
     }
+
 }
