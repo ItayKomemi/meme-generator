@@ -55,8 +55,8 @@
         <div class="button-container">
 
             <div>
-                <span>Enter text here:</span> <input oninput="onSetLineTxt(this.value)" type="text" name="text-line"
-                    placeholder="Text line">
+                <input oninput="onSetLineTxt(this.value)" class="txt-input"  type="text" name="text-line"
+                    placeholder="Enter some text here">
             </div>
 
             <div>
@@ -80,8 +80,7 @@
                     <option value="Verdana"></option>
                 </datalist>
 
-                <span>Choose font here:</span> <input oninput="onHandelFont(null,this.value)" type="text" list="fonts"
-                    placeholder="Impact">
+                <input oninput="onHandelFont(null,this.value)" type="text" list="fonts" placeholder="Select font here">
                 <!-- <button><img src="ICONS/text stroke.png" alt=""></button> -->
                 <input type="color" name="color-picker" oninput="onChooseColor(this.value)"></input>
             </div>
@@ -93,13 +92,13 @@
                 <button onclick="onSetSticker(this)">😍</button>
                 <button onclick="onSetSticker(this)">😵</button>
             </div>
-            <div>
+            <div class="upload-download">
 
                 <!-- <input type="file" class="file-input btn hidden" name="image" onchange="onImgInput(event)" /> -->
 
-                <button class="btn" onclick="onUploadImg()">Upload to Facebook</button>
+                <button class="btn upload" onclick="onUploadImg()">Upload to Facebook</button>
 
-                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg"><button>Download</button></a>
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg"><button class="download">Download</button></a>
 
             </div>
 

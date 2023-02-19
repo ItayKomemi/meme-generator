@@ -102,6 +102,7 @@ function switchLine() {
 
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
+    return gMeme
 }
 
 function addLine() {
@@ -135,13 +136,18 @@ function setAlign(letter) {
     else if (letter === 'C') gMeme.lines[gMeme.selectedLineIdx].align = 'center'
     else if (letter === 'R') gMeme.lines[gMeme.selectedLineIdx].align = 'right'
 
-     
+
     return gMeme
 }
 
 function deleteLine() {
-    console.log(gMeme.selectedLineIdx);
-    gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx], 1)
+    //     console.log(gMeme.selectedLineIdx);
+    //    const deleted = gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx], 1)
+    //     console.log(gMeme.lines);
+    //     console.log(deleted);
+
+    gMeme.lines[gMeme.selectedLineIdx].txt = ''
+    return gMeme
 }
 
 function getRandomTxt() {

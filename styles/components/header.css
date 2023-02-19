@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 10.125em;
+    height: 6.125em;
     background-color: #ff7f00;
     grid-column: 1 / -1;
 }
@@ -24,6 +24,7 @@
     text-decoration: none;
     color: rgb(255, 255, 255);
     padding: 40px 40px;
+    font-size: 1.3em;
 }
 
 .main-menu a:hover{

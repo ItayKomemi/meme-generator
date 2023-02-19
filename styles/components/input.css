@@ -1,3 +1,7 @@
 .input-flex-container{
     grid-row: 2;
 }
+
+.txt-input{
+    width: 220px;
+}

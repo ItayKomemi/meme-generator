@@ -1,4 +1,7 @@
 @media (max-width: 750px) {
+    body{
+        overflow-x: hidden;
+    }
 
     .gallery-layout {
         grid-template-columns: repeat(2, minmax(80px, 1fr));
@@ -17,7 +20,6 @@
     .body-layout {
         display: grid;
         grid-template-columns: 10px 1fr 10px;
-        /* text-align: center; */
     }
 
     .button-canvas-container {
@@ -60,7 +62,7 @@
         font-size: 2em;
     } 
     .button-container{
-        margin-left: 3em;
+        margin-left: 2.7em;
         margin-top: 0;
     }
 
